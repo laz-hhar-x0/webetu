@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <link rel="stylesheet" href="/css/welcom.css"> -->
+  <link rel="stylesheet" href="/css/welcom.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <title>Welcome</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body style="background-color: #C6C6C6;" >
+  
+
+
+
+    <!-- when i send data etudient open windoe thank you for 2 second  -->
+  <% if (typeof message !== 'undefined') { %>
+    <div id="success-message" class="alert alert-success mt-3">
+      <%= message %>
+    </div>
+  
+    <script>
+      setTimeout(() => {
+        const msg = document.getElementById('success-message');
+        if (msg) {
+          msg.style.display = 'none';
+        }
+      }, 3000); 
+    </script>
+  <% } %>
+   
+<!-- ---------------------------------------------------------------------------------------------- -->
+
+
+
+    <div class="all  m-auto d-flex flex-column align-items-center justify-content-center min-vh-100">
+
+              <img src="/img/Logo.png" alt="Logo" class="imgg">
+              
+          <div class=" text-center my-5 text-secondary">
+              <h5 class="fw-smaler">Progiciel de Gestion Integre </h5> 
+              <h6 class="/"> Student Portal </h6>
+          </div>
+
+
+
+    <form action="/login" method="POST" class="d-flex flex-column align-items-center w-90">
+
+          <div class="user input-group " style="max-width: 400px; width: 100%;">
+            <span class="input-group-text bg-secondary-subtle"><i class="fas fa-user"></i></span>
+            <input type="text" name="matricule" class="user form-control bg-secondary-subtle" placeholder="Enter votre matricule">
+          </div>
+          <span class="write  w-100 text-start ps-3" style="visibility: hidden;">please enter your matricule!</span>
+
+          <div class="user  input-group" style="max-width: 400px; width: 100%;">
+            <span class="input-group-text bg-secondary-subtle"><i class="fas fa-key"></i></span>
+            <input type="password" name="password" class="form-control bg-secondary-subtle" placeholder="Enter votre mot de passe">
+          </div>
+
+          <span class="writee w-100 text-start ps-3" style="visibility:hidden;">please enter your Password!</span>
+
+
+        <!-- Login button -->
+        <!-- <div class="Login d-grid mt-3 mb-4" style="max-width: 400px; width: 100%;"> -->
+          <button type="submit" class="btn btnn btn-success">Login</button>
+        <!-- </div> -->
+    
+    </form>
+
+
+
+    <h6 class="last mt-4 text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
+    </div>
+
+
+    <div style="position: absolute; top: 20px; left:12px;">
+      <button id="togglePasswordInput" class="btn btn-primary">
+        <i id="toggleIcon" class="fas fa-plus"></i> 
+      </button>
+
+      <div id="passwordBox" class="w-55 mx-4" style="margin-top: 4px;">
+        <div class="d-flex align-items-center">
+          <input type="password" id="passwordInput" class="form-control me-2" placeholder="Enter password" style="padding-left: 9px; height: 40px; background-color: #ffffff00;">
+          <button id="checkPasswordBtn" class="btn btn-success">submit </button>
+        </div>
+        
+        <span id="errorMsg" style="color:red; font-size: 14px; display: none;">Wrong password!</span>
+      </div>
+      
+    </div>
+
+
+    <audio id="errorSound" src="https://www.soundjay.com/button/sounds/beep-07.mp3" preload="auto"></audio>
+
+<script>
+  const toggleBtn = document.getElementById("togglePasswordInput");
+const passwordBox = document.getElementById("passwordBox");
+const checkBtn = document.getElementById("checkPasswordBtn");
+const passwordInput = document.getElementById("passwordInput");
+const errorMsg = document.getElementById("errorMsg");
+const toggleIcon = document.getElementById("toggleIcon");
+
+let visible = false;
+
+toggleBtn.addEventListener("click", () => {
+  visible = !visible;
+
+  passwordBox.classList.toggle("visible", visible);
+  toggleIcon.className = visible ? "fas fa-times" : "fas fa-plus";
+  errorMsg.style.display = "none";
+
+  if (visible) {
+    passwordInput.value = "";
+    passwordInput.focus();
+  }
+});
+
+checkBtn.addEventListener("click", () => {
+  const enteredPassword = passwordInput.value;
+  const errorSound = document.getElementById("errorSound");
+
+  if (enteredPassword === "admin") {
+    window.location.href = "http://localhost:3000/input";
+  } else {
+    // صوت
+    errorSound.play();
+
+    // رسالة الخطأ مع الأنيميشن
+    errorMsg.classList.add("show");
+
+    // إضافة الأنيميشن (هزة) و التأثيرات
+    passwordInput.classList.add("flash-bg", "red-border", "shake");
+    checkBtn.classList.add("red-button", "shake");
+    checkBtn.textContent = "WRONG";
+
+    // رجوع للوضع الأصلي بعد 2 ثواني
+    setTimeout(() => {
+      errorMsg.classList.remove("show");
+      errorMsg.style.display = "none";
+
+      passwordInput.classList.remove("flash-bg", "red-border", "shake");
+      checkBtn.classList.remove("red-button", "shake");
+      checkBtn.textContent = "submit";
+    }, 2000);
+  }
+});
+
+
+
+
+
+
+  setTimeout(() => {
+    const msg = document.getElementById('success-message');
+    if (msg) {
+      msg.classList.add('fade-out');
+      setTimeout(() => {
+        msg.remove(); // نحّيه من الصفحة بعد نهاية الأنيميشن
+      }, 600); // نفس وقت animation: fadeOut
+    }
+  }, 2000); // 2 ثواني قبل ما يبدأ يختفي
+
+</script>
+
+  
+</body>
+</html>
