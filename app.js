@@ -143,16 +143,20 @@ app.post('/input', async (req, res) => {
 app.post('/login', async (req, res) => {
   const { matricule, password } = req.body;
 
-  // تحقق إذا matricule عدد صحيح
   const parsedMatricule = Number(matricule);
   if (isNaN(parsedMatricule)) {
     return res.send(`<h3 style="color:red;">❌ الرجاء إدخال matricule صحيح</h3>`);
   }
 
   try {
-    const student = await Module.findOne({ matricule: parsedMatricule, password });
+    const student = await Module.findOne({ matricule: parsedMatricule });
 
-    if (student) {
+    if (!student) {
+      return res.send(`<h3 style="color:red;">❌ خطأ في matricule أو كلمة السر</h3>`);
+    }
+
+    const isMatch = await bcrypt.compare(password, student.password);
+    if (isMatch) {
       res.redirect(`/${student._id}`);
     } else {
       res.send(`<h3 style="color:red;">❌ خطأ في matricule أو كلمة السر</h3>`);
@@ -161,8 +165,8 @@ app.post('/login', async (req, res) => {
     console.error(err);
     res.status(500).send("⚠️ خطأ في الخادم");
   }
-
 });
+
 
 
 
@@ -176,7 +180,7 @@ mongoose.connect("mongodb://7adina:7adina123-123@7adina-shard-00-00.a6o7i.mongod
 .then(() => {
   app.listen(port, () => {
     // console.log(`✅ Server is running on http://localhost:${port}/welcom`);
-    console.log(`✅ Server is running on /welcom`);
+    console.log(`✅ Server is running on `);
   });
   
   
