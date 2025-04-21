@@ -145,7 +145,7 @@ app.post('/login', async (req, res) => {
 
   const parsedMatricule = Number(matricule);
   if (isNaN(parsedMatricule)) {
-    return res.send(`<h3 style="color:red;">❌ الرجاء إدخال matricule صحيح</h3>`);
+    return res.send(`<h1 style="color:red;">❌ الرجاء إدخال matricule صحيح</h1>`);
   }
 
   try {
@@ -157,7 +157,8 @@ app.post('/login', async (req, res) => {
 
     const isMatch = await bcrypt.compare(password, student.password);
     if (isMatch) {
-      res.redirect(`/${student._id}`);
+      // res.redirect(`/${student._id}`);
+      res.redirect(`https://your-app-name.onrender.com/${student._id}`);
     } else {
       res.send(`<h3 style="color:red;">❌ خطأ في matricule أو كلمة السر</h3>`);
     }
