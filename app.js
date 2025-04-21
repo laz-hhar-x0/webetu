@@ -5,12 +5,11 @@ const Module = require('./models/Module');
 const port = process.env.PORT || 3000;
 const bcrypt = require('bcrypt');
 
-// helloUpdate 7
 const fs = require('fs');
 const path = require('path');
 
  
-
+// helo lazhar
 
 app.use(express.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
