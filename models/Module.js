@@ -43,4 +43,4 @@ const moduleSchema = new mongoose.Schema({
   Anglais: noteSchema,
 });
 
-module.exports = mongoose.model('Module', moduleSchema);
+module.exports = mongoose.model('Studient', moduleSchema);
