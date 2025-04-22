@@ -78,7 +78,7 @@
 
 
 
-    <h6 class="last mt-4 text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
+    <h6 class="last text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
     </div>
 
 
@@ -184,6 +184,45 @@ checkBtn.addEventListener("click", () => {
   window.addEventListener('focusout', () => {
     document.body.style.height = '100dvh';
   });
+
+
+
+// ----------------------------------------------------------------------------------
+
+
+
+
+const loginForm = document.querySelector("form");
+const loginBtn = loginForm.querySelector("button[type='submit']");
+const matriculeInput = loginForm.querySelector("input[name='matricule']");
+const passwordLoginInput = loginForm.querySelector("input[name='password']");
+
+loginForm.addEventListener("submit", function (e) {
+  if (matriculeInput.value.trim() === "" || passwordLoginInput.value.trim() === "") {
+    e.preventDefault(); // منع الفورم من الإرسال
+
+    if (matriculeInput.value.trim() === "") {
+      matriculeInput.classList.add("error-border");
+    }
+
+    if (passwordLoginInput.value.trim() === "") {
+      passwordLoginInput.classList.add("error-border");
+    }
+
+    loginBtn.classList.add("btn-error");
+    loginBtn.textContent = "معلومات خاطئة!";
+
+    // رجّع كلش بعد 3 ثواني
+    setTimeout(() => {
+      matriculeInput.classList.remove("error-border");
+      passwordLoginInput.classList.remove("error-border");
+      loginBtn.classList.remove("btn-error");
+      loginBtn.textContent = "Login";
+    }, 3000);
+  }
+});
+
+
 
 </script>
 

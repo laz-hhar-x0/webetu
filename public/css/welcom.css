@@ -20,7 +20,13 @@ body {
   width: 100%;
   padding-left: 12px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
 }
+
+
 
 .imgg {
   max-width: 100%;
@@ -73,15 +79,13 @@ i {
 }
 
 .last {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
+  margin-top: auto;
   text-align: center;
   font-size: 13px;
   color: #787777ac;
   z-index: 10;
 }
+
 
 .Login button {
   height: 30px;
@@ -176,9 +180,11 @@ i {
   100% { transform: translateX(0); }
 }
 
+
 .shake {
   animation: shake 0.5s ease-in-out;
 }
+
 
 /* Responsive styles */
 @media (max-width: 480px) {
@@ -186,14 +192,18 @@ i {
     padding: 0 12px;
   }
 
+.last{
+  margin-top: 140PX;
+}
+
   .input-group {
     flex-direction: row;
-    width: 100%;
+    width: 80%;
   }
 
   .btnn,
   .Login button {
-    width: 100%;
+    width: 80%;
   }
 
   .last {
@@ -204,4 +214,14 @@ i {
     left: 5%;
     right: 5%;
   }
+}
+
+.error-border {
+  border: 2px solid red !important;
+}
+
+.btn-error {
+  background-color: #dc3545 !important; /* أحمر */
+  border-color: #dc3545 !important;
+  color: white !important;
 }
