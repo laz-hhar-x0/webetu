@@ -42,3 +42,23 @@ function showContent(buttonNumber) {
 
     changePage(buttonNumber);
 }
+
+
+
+
+
+const inputs = document.querySelectorAll("input, textarea");
+
+inputs.forEach(input => {
+  input.addEventListener("focus", () => {
+    document.body.style.overflow = "hidden";
+  });
+
+  input.addEventListener("blur", () => {
+    document.body.style.overflow = "auto";
+  });
+});
+
+
+
+

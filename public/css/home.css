@@ -1,168 +1,126 @@
-
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-
-@media (max-width: 768px) {
-   
-
-
-
-
-
-
-
-.navbar {
+  }
+  
+  /* NAVBAR */
+  .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(29, 29, 29, 0.659);
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-
-.container-fluid{
-    background-color: #28a745;
+     background-color: rgba(0, 0, 0, 0.599);
+    padding: 0 2vw;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* HEADER */
+  .container-fluid {
     width: 100%;
-    padding: 20px;
-}
-.container-fluid h2{
-    font-size: 50px;
-    color: aqua;
-}
-
-.phone-container {
+    margin-top: 3px;
+    padding: 1vh 2vw;
+  }
+  .container-fluid h2 {
+    font-size: 6vw;
+    color: rgb(10, 146, 119);
+    padding-left: 20px;
+    text-align: center;
+  }
+  
+  /* MAIN PHONE CONTAINER */
+  .phone-container {
     width: 100%;
     height: 100vh;
     color: #e3f2fd;
     background-color: rgb(29, 29, 29);
-}
-
-.content {
-    width: 90%;
+  }
+  
+  /* CONTENT BOX */
+  .content {
+    width: 95%;
     margin: 0 auto;
     height: 100vh;
     border-radius: 20px;
     background-color: rgb(29, 29, 29);
     position: relative;
     overflow-y: auto;
-    padding-bottom: 80px; 
-    
-}
-
-.page {
+    padding-bottom: 80px;
+  }
+  
+  /* PAGE INSIDE CONTENT */
+  .page {
     display: none;
     text-align: center;
     overflow-y: auto;
-    max-height: calc(100vh - 100px); 
-    padding-top: 60px; 
-
-}
-
-
-
-.page p {
-    font-size: 18px;
-    color: #333;
-}
-
-
-
-
-
-
-
-.bottom-buttons {
+    max-height: calc(100vh - 100px);
+    padding-top: 60px;
+    margin-top: 5px;
+  }
+  .page p {
+    font-size: 4vw;
+    color: #ccc;
+  }
+  
+  /* BOTTOM BUTTONS */
+  .bottom-buttons {
     position: fixed;
-    bottom: 20px;
+    bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 95%;
     background-color: rgb(41, 44, 63);
     border-radius: 10px;
     box-shadow: -7px 0 5px rgba(255, 255, 255, 0.1), 7px 0 5px rgba(255, 255, 255, 0.1);
-    padding: 0; 
-    margin: 0; 
     overflow: hidden;
-}
-
-.button-item {
+  }
+  
+  .button-item {
     text-align: center;
     flex: 1;
-    padding: 0;
-    margin-top: 0; 
-    transition: transform 0.5s ease-in-out; 
-}
-
-.button-item button {
+    padding: 1vh 0;
+    transition: transform 0.5s ease-in-out;
+  }
+  .button-item button {
     width: 100%;
     height: 100%;
-    font-size: 25px;
+    font-size: 5vw;
     border-radius: 12px;
     cursor: pointer;
-    transition: all .4s;
+    transition: all 0.4s;
     background-color: rgb(41, 44, 63);
     border: none;
     padding-top: 4px;
-}
-
-.button-item h6 {
+  }
+  .button-item h6,
+  .button-item i {
     color: #e3f2fd;
-    margin-top: 5px;
-}
-
-.button-item i {
-    color: #e3f2fd;
-}
-
-
-
-
-.icon {
-    font-size: 30px;
-}
-
-
-button:focus {
+  }
+  .icon {
+    font-size: 6vw;
+  }
+  button:focus {
     outline: none;
-}
-
-button.active {
+  }
+  button.active {
     background-color: rgb(1, 121, 96);
-}
-
-
-
-
-
-
-
-
-.lesCari {
-    width: 100%;
-    padding: 20px;
   }
   
-  .bigCari {
-    position: relative; /* ضروري باش overlay يتمركز فوق */
+  /* LES CARI */
+  .lesCari {
     width: 100%;
-    height: 100px;
-    margin: 0 auto 20px auto;
-    /* background-image: url("../background-green.jpg"); */
-    background-color: rgb(94, 132, 117);  
+    padding: 2vh 2vw;
+  }
+  .bigCari {
+    position: relative;
+    width: 100%;
+    height: 13vh;
+    margin-bottom: 20px;
+    background-color: rgb(94, 132, 117);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -171,69 +129,80 @@ button.active {
     overflow: hidden;
     border-radius: 10px;
   }
-
-  
   .bigCari img {
     position: relative;
-    z-index: 2; 
-    max-width: 35%;
+    z-index: 2;
+    max-width: 45%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
   }
   
-  
-
-  
+  /* MINI CARI GRID */
   .Caris {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
     gap: 10px;
+    justify-content: space-between;
+    padding: 0 10px;
   }
-  
   .miniCari {
-    width: 48%;
-    height: 80px; 
-    background-color: rgb(1, 121, 96);;
+    width: 46%;
+    height: 8vh;
+    background-color: rgb(1, 121, 96);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-      
-  
-  
   .miniCari i {
-    font-size: 26px;
+    font-size: 5vw;
     color: #ffffff;
     margin-bottom: 5px;
   }
-  
   .miniCari span {
-    font-size: 14px;
+    font-size: 3vw;
     color: #ffffff;
   }
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
+  
+  /* RESPONSIVE FOR TABLETS AND DESKTOP */
+  @media (min-width: 768px) {
+    .container-fluid h2 {
+      font-size: 3vw;
+    }
+  
+    .button-item button {
+      font-size: 20px;
+    }
+  
+    .icon {
+      font-size: 28px;
+    }
+  
+    .miniCari {
+      width: 30%;
+      height: 100px;
+    }
+    .miniCari span {
+      font-size: 16px;
+    }
+  
+    .bigCari {
+      height: 120px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .miniCari {
+      width: 23%;
+    }
+  
+    .bigCari img {
+      max-width: 25%;
+    }
+  }
   
