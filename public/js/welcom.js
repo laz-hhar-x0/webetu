@@ -1,6 +1,4 @@
 
-
-
 const toggleBtn = document.getElementById("togglePasswordInput");
 const passwordBox = document.getElementById("passwordBox");
 const checkBtn = document.getElementById("checkPasswordBtn");
@@ -88,54 +86,47 @@ checkBtn.addEventListener("click", () => {
 
 // ----------------------------------------------------------------------------------
 
+const loginForm = document.getElementById("loginForm");
+const loginBtn = loginForm.querySelector("button[type='submit']");
+const matriculeInput = loginForm.querySelector("input[name='matricule']");
+// const passwordInput = loginForm.querySelector("input[name='password']");
 
-  // const loginForm = document.querySelector("form");
-  // const loginBtn = loginForm.querySelector("button[type='submit']");
-  // const matriculeInput = loginForm.querySelector("input[name='matricule']");
-  // const passwordInput = loginForm.querySelector("input[name='password']");
+loginForm.addEventListener("submit", async function (e) {
+  e.preventDefault(); // نمنع الإرسال العادي
 
-  loginForm.addEventListener("submit", async function (e) {
-    e.preventDefault(); // نوقف الفورم من الإرسال العادي
+  const matricule = matriculeInput.value.trim();
+  const password = passwordInput.value.trim();
 
-    const matricule = matriculeInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (matricule === "" || password === "") {
-      showError("الرجاء ملء جميع الحقول");
-      return;
-    }
-
-    try {
-      const response = await fetch("/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ matricule, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.redirect) {
-        window.location.href = data.redirect;
-      } else {
-        showError(data.error || "⚠️ حدث خطأ ما");
-      }
-    } catch (err) {
-      showError("⚠️ لا يمكن الاتصال بالخادم");
-    }
-  });
-
-  function showError(message) {
-    let errorSpan = document.querySelector("#login-error");
-    if (!errorSpan) {
-      errorSpan = document.createElement("div");
-      errorSpan.id = "login-error";
-      errorSpan.style.color = "red";
-      errorSpan.style.marginTop = "10px";
-      loginForm.appendChild(errorSpan);
-    }
-    errorSpan.textContent = message;
+  if (matricule === "" || password === "") {
+    showError("⚠️ الرجاء ملء جميع الحقول");
+    return;
   }
 
+  try {
+    
+    const response = await fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ matricule, password }),
+    });
 
+    const data = await response.json();
+
+    if (response.ok && data.redirect) {
+      // إذا صحيح، افتح الصفحة المطلوبة
+      window.location.href = data.redirect;
+    } else {
+      // إذا فيه خطأ، اظهر رسالة فقط بدون إعادة تحميل الصفحة
+      showError(data.error || "⚠️ حدث خطأ ما");
+    }
+  } catch (err) {
+    showError("⚠️ لا يمكن الاتصال بالخادم");
+  }
+});
+
+function showError(message) {
+  let errorDiv = document.getElementById("login-error");
+  errorDiv.textContent = message;
+}

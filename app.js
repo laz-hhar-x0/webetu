@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 
 const fs = require('fs');
 const path = require('path');
+app.use(express.json()); 
 
  
 // helo lazhar
@@ -140,6 +141,36 @@ app.post('/input', async (req, res) => {
 
 
 
+app.post('/login', async (req, res) => {
+  const { matricule, password } = req.body;
+
+  if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
+    return res.render('welcom', { message: "⚠️ الحقول فارغة" });
+  }
+
+  const parsedMatricule = Number(matricule);
+  if (isNaN(parsedMatricule)) {
+    return res.render('welcom', { message: "⚠️ matricule غير صالح" });
+  }
+
+  try {
+    const student = await Module.findOne({ matricule: parsedMatricule });
+
+    if (!student) {
+      return res.render('welcom', { message: "❌ هذا الرقم غير موجود" });
+    }
+
+    const isMatch = await bcrypt.compare(password, student.password);
+    if (isMatch) {
+      return res.redirect(`/${student._id}`);
+    } else {
+      return res.render('welcom', { message: "❌ كلمة المرور خاطئة" });
+    }
+  } catch (err) {
+    console.error(err);
+    return res.render('welcom', { message: "⚠️ خطأ في الخادم" });
+  }
+});
 
 
 
@@ -171,36 +202,73 @@ app.post('/input', async (req, res) => {
 //   }
 // });
 
-app.post('/login', async (req, res) => {
-  const { matricule, password } = req.body;
 
-  if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
-    return res.status(400).json({ error: "الحقول فارغة" });
-  }
 
-  const parsedMatricule = Number(matricule);
-  if (isNaN(parsedMatricule)) {
-    return res.status(400).json({ error: "matricule غير صالح" });
-  }
 
-  try {
-    const student = await Module.findOne({ matricule: parsedMatricule });
 
-    if (!student) {
-      return res.status(404).json({ error: "❌ هذا الرقم غير موجود" });
-    }
+// app.post('/login', async (req, res) => {
+//   const { matricule, password } = req.body;
 
-    const isMatch = await bcrypt.compare(password, student.password);
-    if (isMatch) {
-      return res.status(200).json({ redirect: `/${student._id}` });
-    } else {
-      return res.status(401).json({ error: "❌ كلمة المرور خاطئة" });
-    }
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: "⚠️ خطأ في الخادم" });
-  }
-});
+//   if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
+//     return res.status(400).json({ error: "الحقول فارغة" });
+//   }
+
+//   const parsedMatricule = Number(matricule);
+//   if (isNaN(parsedMatricule)) {
+//     return res.status(400).json({ error: "matricule غير صالح" });
+//   }
+
+//   try {
+//     const student = await Module.findOne({ matricule: parsedMatricule });
+
+//     if (!student) {
+//       return res.status(404).json({ error: "❌ هذا الرقم غير موجود" });
+//     }
+
+//     const isMatch = await bcrypt.compare(password, student.password);
+//     if (isMatch) {
+//       return res.status(200).json({ redirect: `/${student._id}` });
+//     } else {
+//       return res.status(401).json({ error: "❌ كلمة المرور خاطئة" });
+//     }
+//   } catch (err) {
+//     console.error(err);
+//     return res.status(500).json({ error: "⚠️ خطأ في الخادم" });
+//   }
+// });
+
+
+
+// app.post('/login', async (req, res) => {
+//   const { matricule, password } = req.body;
+
+//   if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
+//     return res.status(400).json({ error: "⚠️ الحقول فارغة" });
+//   }
+
+//   const parsedMatricule = Number(matricule);
+//   if (isNaN(parsedMatricule)) {
+//     return res.status(400).json({ error: "⚠️ matricule غير صالح" });
+//   }
+
+//   try {
+//     const student = await Module.findOne({ matricule: parsedMatricule });
+
+//     if (!student) {
+//       return res.status(404).json({ error: "❌ هذا الرقم غير موجود" });
+//     }
+
+//     const isMatch = await bcrypt.compare(password, student.password);
+//     if (isMatch) {
+//       return res.status(200).json({ redirect: `/${student._id}` });
+//     } else {
+//       return res.status(401).json({ error: "❌ كلمة المرور خاطئة" });
+//     }
+//   } catch (err) {
+//     console.error(err);
+//     return res.status(500).json({ error: "⚠️ خطأ في الخادم" });
+//   }
+// });
 
 
 
