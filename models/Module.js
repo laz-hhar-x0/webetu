@@ -30,6 +30,8 @@ const noteSchema = new mongoose.Schema({
 const moduleSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
+  placeOfBirth: String,
+  dateOfBirth: Date,
   matricule: Number,
   anne: Number,
   specialiti: String,

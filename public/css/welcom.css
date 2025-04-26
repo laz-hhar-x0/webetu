@@ -218,10 +218,13 @@ i {
 
 .error-border {
   border: 2px solid red !important;
+  background-color: #ffcccc !important;
 }
 
 .btn-error {
-  background-color: #dc3545 !important; /* أحمر */
-  border-color: #dc3545 !important;
+  background-color: red !important;
+  border-color: red !important;
   color: white !important;
 }
+
+

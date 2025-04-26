@@ -3,86 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Form Étudiant</title>
+  <meta http-equiv="Cache-Control" content="no-store" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* لتقليص الحجم */
-body {
-  font-size: 0.9rem;
-}
+  <link rel="stylesheet" href="/css/input_etud.css">
 
-/* تصميم أكثر مرونة */
-.container-fluid {
-  max-width: 100%;
-}
-
-/* تصغير الحقول */
-.form-control {
-  font-size: 1rem;
-  padding: 10px;
-  width: 100%;
-}
-
-/* تصغير الأزرار */
-
-.btn {
-  font-size: 0.9rem;
-  padding: 8px 15px;
-}
-
-/* تقليص المسافات */
-.row {
-  margin-bottom: 1rem;
-}
-
-/* تقليص تباعد العناوين */
-h5 {
-  font-size: 1.1rem;
-  padding: 10px;
-}
-
-/* تخصيص الجدول ليناسب الشاشات الصغيرة */
-.table {
-  font-size: 0.9rem;
-}
-
-@media (max-width: 767px) {
-  .container-fluid {
-    padding: 15px;
-  }
-
-  .form-control {
-    padding: 8px;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .module {
-    font-size: 0.9rem;
-  }
-
-  .table td, .table th {
-    padding: 8px;
-  }
-}
-
-    .module {
-      background-color: #f8f9fa;
-    }
-  </style>
 </head>
-<body class="bg-light p-2">
+<body class=" p-2">
 
 
   <form method="POST" action="/input">
 
-    <div class="container-fluid px-3 py-4 bg-white rounded shadow">
+    <div class="container-fluid px-3 py-4  rounded shadow">
 
           <!-- Label 1 -->
-          <h5 class="mb-3 bg-primary">📘 Informations de l'étudiant</h5>
+          <h5 class="mb-3 ">✅ Informations de l'étudiant</h5>
           <div class="row">
             <div class="col-12 mb-3">
               <label>First Name</label>
@@ -91,6 +26,77 @@ h5 {
             <div class="col-12 mb-3">
               <label>Last Name</label>
               <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" required>
+            </div>
+            
+            <div class="col-12 mb-3">
+              <label for="placeOfBirth">Place of Birth</label>
+              <select class="form-control" name="placeOfBirth" id="placeOfBirth" required>
+                <option value="">Select Place of Birth</option>
+                <option value="Adrar">Adrar</option>
+                <option value="Chlef">Chlef</option>
+                <option value="Laghouat">Laghouat</option>
+                <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                <option value="Batna">Batna</option>
+                <option value="Béjaïa">Béjaïa</option>
+                <option value="Biskra">Biskra</option>
+                <option value="Béchar">Béchar</option>
+                <option value="Blida">Blida</option>
+                <option value="Bouira">Bouira</option>
+                <option value="Tamanrasset">Tamanrasset</option>
+                <option value="Tébessa">Tébessa</option>
+                <option value="Tlemcen">Tlemcen</option>
+                <option value="Tiaret">Tiaret</option>
+                <option value="Tizi Ouzou">Tizi Ouzou</option>
+                <option value="Algiers">Algiers</option>
+                <option value="Djelfa">Djelfa</option>
+                <option value="Jijel">Jijel</option>
+                <option value="Sétif">Sétif</option>
+                <option value="Saïda">Saïda</option>
+                <option value="Skikda">Skikda</option>
+                <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+                <option value="Annaba">Annaba</option>
+                <option value="Guelma">Guelma</option>
+                <option value="Constantine">Constantine</option>
+                <option value="Médéa">Médéa</option>
+                <option value="Mostaganem">Mostaganem</option>
+                <option value="MSila">MSila</option>
+                <option value="Mascara">Mascara</option>
+                <option value="Ouargla">Ouargla</option>
+                <option value="Oran">Oran</option>
+                <option value="El Bayadh">El Bayadh</option>
+                <option value="Illizi">Illizi</option>
+                <option value="Bordj Bou Arréridj">Bordj Bou Arréridj</option>
+                <option value="Boumerdès">Boumerdès</option>
+                <option value="El Tarf">El Tarf</option>
+                <option value="Tindouf">Tindouf</option>
+                <option value="Tissemsilt">Tissemsilt</option>
+                <option value="El Oued">El Oued</option>
+                <option value="Khenchela">Khenchela</option>
+                <option value="Souk Ahras">Souk Ahras</option>
+                <option value="Tipaza">Tipaza</option>
+                <option value="Mila">Mila</option>
+                <option value="Aïn Defla">Aïn Defla</option>
+                <option value="Naâma">Naâma</option>
+                <option value="Aïn Témouchent">Aïn Témouchent</option>
+                <option value="Ghardaïa">Ghardaïa</option>
+                <option value="Relizane">Relizane</option>
+                <option value="Timimoun">Timimoun</option>
+                <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+                <option value="Ouled Djellal">Ouled Djellal</option>
+                <option value="Béni Abbès">Béni Abbès</option>
+                <option value="In Salah">In Salah</option>
+                <option value="In Guezzam">In Guezzam</option>
+                <option value="Touggourt">Touggourt</option>
+                <option value="Djanet">Djanet</option>
+                <option value="El M'Ghair">El M'Ghair</option>
+                <option value="El Meniaa">El Meniaa</option>
+              </select>
+            </div>
+            
+
+            <div class="col-12 mb-3">
+              <label>Date of Birth</label>
+              <input type="date" class="form-control" name="dateOfBirth" required>
             </div>
             <div class="col-12 mb-3">
               <label>Matricule</label>
@@ -112,7 +118,7 @@ h5 {
 
 
 
-            <br><br><hr style="color: blue; "><br><br>
+            <br><br><hr style="color: rgb(10, 96, 79); "><br><br>
 
 
 
@@ -123,7 +129,7 @@ h5 {
 
 
           <!-- Label 2 -->
-          <h5 class="mt-4 mb-3  bg-primary">📚 Modules & Notes</h5>
+          <h5 class="mt-4 mb-3 ">📚 Modules & Notes</h5>
 
           <table class="table table-bordered text-center align-middle">
             <thead class="table-success">
@@ -192,7 +198,7 @@ h5 {
     </div>
         
         
-        <button type="submit" class="btn btn-primary w-100 mt-3"> 💾 Save</button>
+        <button type="submit" class="btn btn-success w-100 mt-3"> 💾 Save</button>
     </form>
 
 

@@ -37,58 +37,65 @@
                   <div class="Caris">
                     <!-- 20 miniCari -->
                     <div class="miniCari">
-                      <i class="fas fa-user"></i>
-                      <span>المستخدم</span>
+                      <i class="fa-solid fa-file"></i>
+                      <span>Discharge</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-cog"></i>
-                      <span>الإعدادات</span>
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <span>Timetable</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-bell"></i>
-                      <span>تنبيهات</span>
+                      <i class="fa-solid fa-user-group"></i>
+                      <span>Group and Section</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-heart"></i>
-                      <span>مفضلة</span>
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <span>Exams Schedule</spanExan g>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-camera"></i>
-                      <span>كاميرا</span>
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <span>Exam Grades</span>
+                    </div>
+
+
+
+                    <a href="#" class="miniCari" style="text-decoration: none; color: inherit;">
+                      <i class="fa-solid fa-pen"></i>
+                      <span>Assessment</span>
+                    </a>
+                    
+
+
+
+                    <div class="miniCari">
+                      <i class="fa-solid fa-chart-pie"></i>
+                      <span>Percentage(%)</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-car"></i>
-                      <span>سيارة</span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      <span>Academic Transcripts </span>
+                    </div>
+                    
+                    <div class="miniCari">
+                      <i class="fa-solid fa-calculator"></i>
+                      <span>Debts</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-music"></i>
-                      <span>موسيقى</span>
+                      <i class="fa-solid fa-file"></i>
+                      <span>Academic Vacation</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-wifi"></i>
-                      <span>واي فاي</span>
+                      <i class="fa-solid fa-address-book"></i>
+                      <span>Enrollments</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-map"></i>
-                      <span>خريطة</span>
+                      <i class="fa-solid fa-utensils"></i>
+                      <span>Restauration</span>
                     </div>
                     <div class="miniCari">
-                      <i class="fas fa-phone"></i>
-                      <span>هاتف</span>
+                      <i class="fa-solid fa-braille"></i>
+                      <span>Other Services</span>
                     </div>
-                    <div class="miniCari">
-                      <i class="fas fa-envelope"></i>
-                      <span>بريد</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fas fa-lock"></i>
-                      <span>قفل</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fas fa-cloud"></i>
-                      <span>سحابة</span>
-                    </div>
-                   
                   </div>
                 
                 </div>
@@ -98,19 +105,23 @@
           </div>
 
 
-          <div id="content2" class="page" style="display: none;">
-              <nav class="navbar">
-                  <div class="container-fluid">
-                       <h2> ID Cards </h2>
-                  </div>
-              </nav>
+          
+          <div id="content2" class="page" style="display: block;">
+            <nav class="navbar">
+              <div class="container-fluid">
+                <h2>ID Cards</h2>
+              </div>
+            </nav>
           
 
-             
-              
-                
+
+           
+
           </div>
-                
+
+          
+
+
                 
     
           <div id="content3" class="page" style="display: none;">
@@ -118,7 +129,53 @@
                   <div class="container-fluid">
                        <h2> My Profile </h2>
                   </div>
-              </nav>           
+              </nav>     
+              
+              <div class="profile-sections">
+                <!-- DIV 1 -->
+               <div class="profile-header">
+                  <img src="/img/009.jpg" alt="Profile Image" class="profile-img">
+                  
+                  <div class="profile-text">
+                    <h2><%= student.firstName + " " + student.lastName %></h2>
+                    <p>University of Djelfa</p>
+                  </div>
+                </div>
+  
+            
+                <!-- DIV 2 -->
+                <div class="profile-info">
+                  
+                  <div class="info-row">
+                    <i class="fa-solid fa-id-card icon"></i>
+                    <div class="text">
+                      <h2>Place of Birth</h2>
+                      <p><%= student.placeOfBirth %></p>
+                    </div>
+                  </div>
+                  <div class="info-row">
+                    <i class="fa-solid fa-graduation-cap icon"></i>
+                    <div class="text">
+                      <h2>Date of Birth</h2>
+                      <p><%= student.dateOfBirth ? new Date(student.dateOfBirth).toISOString().slice(0, 10) : 'N/A' %></p>
+                    </div>
+                  </div>
+                  
+
+
+                </div>
+            
+                <div class="language-switch">
+                    <i class="fa-solid fa-language icon"></i>
+                      <h2>Language</h2>
+                      <button class="language-button">en-US</button>
+                </div>
+            
+                <div class="logout-section">
+                  <button class="logout-button">LOGOUT</button>
+                </div>
+            
+              </div>
           </div>
 
 
@@ -140,22 +197,21 @@
               <div class="button-item">
                   <button onclick="showContent(1)" class="active">
                       <i class="fas fa-home"></i>
-                      <h6> home<h6>
+                      <h6> home</h6>
                   </button>
               </div>
 
               <div class="button-item">
                   <button onclick="showContent(2)">
-                      <!-- <i class="fas fa-credit-card"></i> -->
                       <i class="fa-solid fa-credit-card" ></i>
-                      <h6> cart <h6>
-                      </button>
+                      <h6> cart </h6>
+                    </button>
               </div>
 
               <div class="button-item">
                   <button onclick="showContent(3)">
                       <i class="fas fa-user"></i>
-                      <h6> Portfolio<h6>
+                      <h6> Portfolio</h6>
                       </button>
               </div>
   </div>

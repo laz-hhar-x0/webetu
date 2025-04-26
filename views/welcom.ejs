@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- <link rel="stylesheet" href="/css/welcom.css"> -->
   <link rel="stylesheet" href="/css/welcom.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,14 +72,21 @@
         <!-- <div class="Login d-grid mt-3 mb-4" style="max-width: 400px; width: 100%;"> -->
           <button type="submit" class="btn btnn btn-success">Login</button>
         <!-- </div> -->
-        <h6 class="last text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
     
-        
     </form>
 
-
-    <!-- <h6 class="last text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6> -->
+    <div id="login-error" class="text-danger mt-2"></div>
+    <h6 class="last text-center">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
     </div>
+
+
+
+
+
+
+
+
+
 
 
     <div style="position: absolute; top: 20px; left:12px;">
@@ -102,131 +108,8 @@
 
     <audio id="errorSound" src="https://www.soundjay.com/button/sounds/beep-07.mp3" preload="auto"></audio>
 
-<script>
-  const toggleBtn = document.getElementById("togglePasswordInput");
-const passwordBox = document.getElementById("passwordBox");
-const checkBtn = document.getElementById("checkPasswordBtn");
-const passwordInput = document.getElementById("passwordInput");
-const errorMsg = document.getElementById("errorMsg");
-const toggleIcon = document.getElementById("toggleIcon");
 
-let visible = false;
-
-toggleBtn.addEventListener("click", () => {
-  visible = !visible;
-
-  passwordBox.classList.toggle("visible", visible);
-  toggleIcon.className = visible ? "fas fa-times" : "fas fa-plus";
-  errorMsg.style.display = "none";
-
-  if (visible) {
-    passwordInput.value = "";
-    passwordInput.focus();
-  }
-});
-
-checkBtn.addEventListener("click", () => {
-  const enteredPassword = passwordInput.value;
-  const errorSound = document.getElementById("errorSound");
-
-  if (enteredPassword === "admin@LAZHAR") {
-    window.location.href = "/input";
-  } else {
-    // صوت
-    errorSound.play();
-
-    // رسالة الخطأ مع الأنيميشن
-    errorMsg.classList.add("show");
-
-    // إضافة الأنيميشن (هزة) و التأثيرات
-    passwordInput.classList.add("flash-bg", "red-border", "shake");
-    checkBtn.classList.add("red-button", "shake");
-    checkBtn.textContent = "WRONG";
-
-    // رجوع للوضع الأصلي بعد 2 ثواني
-    setTimeout(() => {
-      errorMsg.classList.remove("show");
-      errorMsg.style.display = "none";
-
-      passwordInput.classList.remove("flash-bg", "red-border", "shake");
-      checkBtn.classList.remove("red-button", "shake");
-      checkBtn.textContent = "submit";
-    }, 2000);
-  }
-});
-
-
-
-
-
-
-  setTimeout(() => {
-    const msg = document.getElementById('success-message');
-    if (msg) {
-      msg.classList.add('fade-out');
-      setTimeout(() => {
-        msg.remove(); // نحّيه من الصفحة بعد نهاية الأنيميشن
-      }, 600); // نفس وقت animation: fadeOut
-    }
-  }, 2000); // 2 ثواني قبل ما يبدأ يختفي
-
-
-
-
-
-  // منع الصفحة من التمدد كي يطلع الكيبورد
-  window.addEventListener('resize', () => {
-    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-      document.body.style.height = window.innerHeight + 'px';
-    }
-  });
-
-  // نرجعو الحالة كي يخرج الكيبورد
-  window.addEventListener('focusout', () => {
-    document.body.style.height = '100dvh';
-  });
-
-
-
-// ----------------------------------------------------------------------------------
-
-
-
-
-const loginForm = document.querySelector("form");
-const loginBtn = loginForm.querySelector("button[type='submit']");
-const matriculeInput = loginForm.querySelector("input[name='matricule']");
-const passwordLoginInput = loginForm.querySelector("input[name='password']");
-
-loginForm.addEventListener("submit", function (e) {
-  if (matriculeInput.value.trim() === "" || passwordLoginInput.value.trim() === "") {
-    e.preventDefault(); // منع الفورم من الإرسال
-
-    if (matriculeInput.value.trim() === "") {
-      matriculeInput.classList.add("error-border");
-    }
-
-    if (passwordLoginInput.value.trim() === "") {
-      passwordLoginInput.classList.add("error-border");
-    }
-
-    loginBtn.classList.add("btn-error");
-    loginBtn.textContent = "معلومات خاطئة!";
-
-    // رجّع كلش بعد 3 ثواني
-    setTimeout(() => {
-      matriculeInput.classList.remove("error-border");
-      passwordLoginInput.classList.remove("error-border");
-      loginBtn.classList.remove("btn-error");
-      loginBtn.textContent = "Login";
-    }, 3000);
-  }
-});
-
-
-
-</script>
-
+<script src="../public/js/welcom.js"></script>
   
 </body>
 </html>

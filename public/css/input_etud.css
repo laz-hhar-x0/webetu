@@ -1,0 +1,94 @@
+
+
+
+body {
+    font-size: 0.9rem;
+}
+
+.container-fluid {
+    max-width: 100%;
+    background-color: rgba(49, 117, 64, 0.273);
+
+}
+
+.container-fluid h5{
+    background-color: rgb(25, 135, 84);
+    color: #f8f9fa;
+}
+
+.form-control {
+font-size: 1rem;
+padding: 10px;
+width: 100%;
+}
+
+
+.btn {
+font-size: 0.9rem;
+padding: 8px 15px;
+}
+
+.row {
+margin-bottom: 1rem;
+}
+
+h5 {
+font-size: 1.1rem;
+padding: 10px;
+}
+
+.table {
+font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+.container-fluid {
+padding: 15px;
+}
+
+.form-control {
+padding: 8px;
+}
+
+.btn {
+width: 100%;
+padding: 10px;
+}
+
+.module {
+font-size: 0.9rem;
+}
+
+.table td, .table th {
+padding: 8px;
+}
+}
+
+.module {
+  background-color: #f8f9fa;
+}
+
+input:focus,
+select:focus {
+    border: none;
+    outline: none;
+    border: 2px solid rgb(109, 227, 203) !important;
+    box-shadow: none !important;
+}
+input {
+    caret-color: rgb(93, 228, 201);
+    background-color: #e8f5f2 !important;
+
+}
+select,
+td {
+    background-color: #e8f5f2 !important;
+}
+td{
+    font-weight: 600;
+}
+
+.container-fluid label{
+    font-weight: 600;
+    padding: 5px 3px;
+}

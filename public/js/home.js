@@ -60,5 +60,16 @@ inputs.forEach(input => {
 });
 
 
+window.onload = function() {
+    showContent(1);
+};
 
 
+
+
+
+document.querySelector('.logout-button').addEventListener('click', function() {
+    localStorage.clear();
+    sessionStorage.clear();
+    location.replace("/"); 
+});
