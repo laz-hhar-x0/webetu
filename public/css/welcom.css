@@ -29,7 +29,7 @@ body {
 
 
 .imgg {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .input-group {
@@ -64,7 +64,7 @@ i {
 }
 
 .btnn {
-  margin-top: 20px;
+  margin: 20px 0;
   width: 80%;
 }
 
@@ -79,7 +79,7 @@ i {
 }
 
 .last {
-  margin-top: auto;
+  margin-top: 25px;
   text-align: center;
   font-size: 13px;
   color: #787777ac;
@@ -90,7 +90,7 @@ i {
 .Login button {
   height: 30px;
   width: 80%;
-  margin: 0 auto;
+  margin: 0px auto;
   font-size: 24px;
   font-weight: 600;
   display: block;
@@ -124,13 +124,13 @@ i {
 
 #success-message {
   position: fixed;
-  top: 20px;
-  right: 10px;
+  top: 90px;
+  left: 10px;
   z-index: 1000;
-  width: 90%;
+  width: 50%;
   max-width: 300px;
   padding: 10px;
-  background-color: #468c66cd;
+  background-color: #57b581cd;
   color: white;
   border-radius: 5px;
   font-size: 16px;
@@ -192,9 +192,6 @@ i {
     padding: 0 12px;
   }
 
-.last{
-  margin-top: 140PX;
-}
 
   .input-group {
     flex-direction: row;
