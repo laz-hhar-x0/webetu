@@ -48,6 +48,7 @@ input.form-control {
   box-shadow: none !important;
   outline: none !important;
   height: 50px;
+  border-bottom: #269e55;
   font-size: 16px;
   padding-left: 4px;
   caret-color: rgb(48, 178, 158);
@@ -66,6 +67,14 @@ i {
 .btnn {
   margin: 20px 0;
   width: 80%;
+  background-color: #269e55;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  padding: 10px 0;color: aliceblue;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .write,
@@ -130,9 +139,11 @@ i {
   width: 50%;
   max-width: 300px;
   padding: 10px;
-  background-color: #57b581cd;
+  background-color:rgb(38, 158, 85);
+  
   color: white;
-  border-radius: 5px;
+  font-weight: 600;
+  border-radius: 9px;
   font-size: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.6s ease forwards;

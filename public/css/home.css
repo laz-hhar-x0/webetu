@@ -136,7 +136,7 @@
     width: 93%;
     height: 14vh;
     margin-bottom: 20px;
-    background-color: rgb(94, 132, 117);
+    background-color:  rgb(11, 149, 121);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -163,12 +163,15 @@
     
   }
   
+
+  
+  
   .miniCari {
-    width: calc(50% - 1.5px); 
+    width: 46%;
     height: 8vh;
-    background-color: rgb(1, 121, 96);
+    background-color: rgb(11, 149, 121);
     border-radius: 10px;
-    padding: 40px 10px;
+    padding: 0;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -178,29 +181,15 @@
     margin: 0 auto;
 
   }
-  
-  
-  .miniCari {
-    width: 46%;
-    height: 8vh;
-    background-color: rgb(1, 121, 96);
-    border-radius: 10px;
-    padding: 40px 10px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   .miniCari i {
     font-size: 5vw;
     color: #ffffff;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }
   .miniCari span {
     font-size: 3vw;
     color: #ffffff;
+    font-weight: 600;
   }
   
   /* RESPONSIVE FOR TABLETS AND DESKTOP */
@@ -219,7 +208,6 @@
   
     .miniCari {
       width: 30%;
-      height: 100px;
     }
     .miniCari span {
       font-size: 16px;
@@ -310,8 +298,8 @@
   
   .info-row .icon,
   .language-switch i{
-    font-size: 6vw;
-    color:  rgb(1, 121, 96);
+    font-size: 9vw;
+    color:   rgb(11, 149, 121);
   }
   .info-row .text{
     text-align: left;
