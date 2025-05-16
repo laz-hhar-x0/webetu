@@ -36,7 +36,6 @@
                       <nav class="navbar">
                           <div class="container-fluid">
                                 <h2><%= (student.firstName + " " + student.lastName).toUpperCase() %></h2>
-                            <!-- <img src="/img/009.jpg" alt="Logo" width="50" height="50" class="rounded-circle"> -->
                               <img src="/<%= student.imagePath || 'img/Logo2.png' %>" width="50" height="50" class="rounded-circle">
                           </div>
                       </nav>
@@ -118,91 +117,128 @@
                   </div>
 
 
-                <!-- محتوى كل صفحة مخفية افتراضياً -->
-<div id="content-discharge" class="content-page" style="display:none;">
-  <button class="back-btn"  style="color: aliceblue;">← رجوع</button>
-  <h2>Discharge</h2>
-  <p>محتوى صفحة Discharge هنا.</p>
-</div>
+                                 <!-- محتوى كل صفحة مخفية افتراضياً -->
+                                    <div id="content-discharge" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Discharge</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-timetable" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Timetable</h2>
-  <p>محتوى جدول الحصص.</p>
-</div>
+                                    <div id="content-timetable" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Timetable</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-group" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Group and Section</h2>
-  <p>محتوى صفحة Group and Section هنا.</p>
-</div>
+                                    <div id="content-group" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Group and Section</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-exams_schedule" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Exams Schedule</h2>
-  <p>محتوى صفحة Exams Schedule هنا.</p>
-</div>
+                                    <div id="content-exams_schedule" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Exams Schedule</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-exam_grades" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Exam Grades</h2>
-  <p>محتوى صفحة Exam Grades هنا.</p>
-</div>
+                                    <div id="content-exam_grades" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Exam Grades</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-assessment" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Assessment</h2>
-  <p>محتوى صفحة Assessment هنا.</p>
-</div>
+                                    <div id="content-assessment" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Assessment</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-percentage" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Percentage(%)</h2>
-  <p>محتوى صفحة Percentage هنا.</p>
-</div>
+                                    <div id="content-percentage" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Percentage(%)</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-transcripts" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Academic Transcripts</h2>
-  <p>محتوى صفحة Academic Transcripts هنا.</p>
-</div>
+                                    <div id="content-transcripts" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Academic Transcripts</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-debts" class="content-page" style="display:none;">
-  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
-  <h2>Debts</h2>
-  <p>محتوى صفحة Debts هنا.</p>
-</div>
+                                    <div id="content-debts" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Debts</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-academic_vacation" class="content-page" style="display:none;">
-  <button class="back-btn">← رجوع</button>
-  <h2>Academic Vacation</h2>
-  <p>محتوى صفحة Academic Vacation هنا.</p>
-</div>
+                                    <div id="content-academic_vacation" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Academic Vacation</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-enrollments" class="content-page" style="display:none;">
-  <button class="back-btn">← رجوع</button>
-  <h2>Enrollments</h2>
-  <p>محتوى صفحة Enrollments هنا.</p>
-</div>
+                                    <div id="content-enrollments" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Enrollments</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-restauration" class="content-page" style="display:none;">
-  <button class="back-btn">← رجوع</button>
-  <h2>Restauration</h2>
-  <p>محتوى صفحة Restauration هنا.</p>
-</div>
+                                    <div id="content-restauration" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Restauration</h2>
+                                      </div>
+                                    </div>
 
-<div id="content-other_services" class="content-page" style="display:none;">
-  <button class="back-btn">← رجوع</button>
-  <h2>Other Services</h2>
-  <p>محتوى صفحة Other Services هنا.</p>
-</div>
+                                    <div id="content-other_services" class="content-page" style="display:none;">
+                                      <div class="ssidbar">
+                                        <button class="back-btn" style="color: aliceblue; background: none; border: none;">
+                                          <i class="fa-solid fa-arrow-left"></i>
+                                        </button>
+                                        <h2>Other Services</h2>
+                                      </div>
+                                    </div>
 
-                  
+
+                                          
                 
-                      
-                      <!-- <div id="contentArea">
-                        <h2>مرحبا! اختر خدمة من القائمة الجانبية</h2>
-                      </div> -->
+                    
 
 
           </div>
@@ -216,7 +252,7 @@
 
 
 
-          
+
 
           
           <div id="content2" class="page" style="display: block;">
@@ -247,11 +283,11 @@
               <div class="profile-sections">
                 <!-- DIV 1 -->
                <div class="profile-header">
-                  <img src="/img/009.jpg" alt="Profile Image" class="profile-img">
-                  
+                              <img src="/<%= student.imagePath || 'img/Logo2.png' %>" width="50" height="50" class="rounded-circle">                  
                   <div class="profile-text">
                     <h2><%= student.firstName + " " + student.lastName %></h2>
-                    <p>University of Djelfa</p>
+                      <p> University of <%= student.placeOfBirth %></p>
+
                   </div>
                 </div>
   

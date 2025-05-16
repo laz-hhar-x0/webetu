@@ -369,17 +369,40 @@
 
 
 
-  .content-page {
-  padding: 20px;
-  border: 1px solid #ddd;
-  margin-top: 10px;
+ .content-page {
+  border: none;
+  opacity: 0; /* ابدأ مخفية */
+  transform: translateX(100%); /* ابدأ خارج الشاشة */
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .back-btn {
   cursor: pointer;
   background: none;
   border: none;
   font-size: 18px;
   margin-bottom: 10px;
+}
+
+.ssidbar{
+  padding: 11px ;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #31a806;
+  border-radius: 12px 12px 0 0 ;
+}
+
+
+.ssidbar button i{
+   font-weight: 600;
+   font-size: 20px;
+    background-color: rgba(39, 38, 38, 0.878);
+   border: none;
+   outline: none;
+   border-radius: 50%;
+   padding: 12px ;
+   margin-right: 50px;
 }
 
 /* أنيميشن خروج */
@@ -411,11 +434,11 @@
 }
 
 .lesCari.animate-in {
-  animation: slideInLeft 0.5s forwards;
+  animation: slideInLeft 0.3s forwards;
 }
 
 .content-page.animate-out {
-  animation: slideOutRight 0.5s forwards;
+  animation: slideOutRight 0.3s forwards;
 }
 
 .content-page.animate-in {
