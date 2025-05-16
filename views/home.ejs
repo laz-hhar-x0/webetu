@@ -23,91 +23,200 @@
          
       <div class="content">
          
+
+
+
+
+
+
+
+
           <div id="content1" class="page" style="display: block;">
               
-              <nav class="navbar">
-                  <div class="container-fluid">
-                    <h2> <%= student.firstName + "  "+ student.lastName %></h2>
-                    <img src="/img/009.jpg" alt="Logo" width="50" height="50" class="rounded-circle">
+                      <nav class="navbar">
+                          <div class="container-fluid">
+                                <h2><%= (student.firstName + " " + student.lastName).toUpperCase() %></h2>
+                            <!-- <img src="/img/009.jpg" alt="Logo" width="50" height="50" class="rounded-circle"> -->
+                              <img src="/<%= student.imagePath || 'img/Logo2.png' %>" width="50" height="50" class="rounded-circle">
+                          </div>
+                      </nav>
+
+                  <div class="lesCari">
+
+                        <div class="bigCari">
+                          <img src="/img/Logo2.png" alt="">
+                        </div>
+
+                        <div class="Caris">
+                          <!-- 20 miniCari -->
+                          <a href="#" class="miniCari" data-target="discharge" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-file"></i>
+                            <span>Discharge</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="timetable" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Timetable</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="group" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span>Group and Section</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="exams_schedule" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <span>Exams Schedule</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="exam_grades" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Exam Grades</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="assessment" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-pen"></i>
+                            <span>Assessment</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="percentage" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span>Percentage(%)</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="transcripts" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span>Academic Transcripts</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="debts" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Debts</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="academic_vacation" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-file"></i>
+                            <span>Academic Vacation</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="enrollments" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-address-book"></i>
+                            <span>Enrollments</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="restauration" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Restauration</span>
+                          </a>
+
+                          <a href="#" class="miniCari" data-target="other_services" style="text-decoration: none; color: inherit;">
+                            <i class="fa-solid fa-braille"></i>
+                            <span>Other Services</span>
+                          </a>
+                        </div>
+
                   </div>
-              </nav>
 
-              <div class="lesCari">
 
-                  <div class="bigCari">
-                    <img src="/img/logo (2).png" alt="">
-                  </div>
+                <!-- محتوى كل صفحة مخفية افتراضياً -->
+<div id="content-discharge" class="content-page" style="display:none;">
+  <button class="back-btn"  style="color: aliceblue;">← رجوع</button>
+  <h2>Discharge</h2>
+  <p>محتوى صفحة Discharge هنا.</p>
+</div>
+
+<div id="content-timetable" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Timetable</h2>
+  <p>محتوى جدول الحصص.</p>
+</div>
+
+<div id="content-group" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Group and Section</h2>
+  <p>محتوى صفحة Group and Section هنا.</p>
+</div>
+
+<div id="content-exams_schedule" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Exams Schedule</h2>
+  <p>محتوى صفحة Exams Schedule هنا.</p>
+</div>
+
+<div id="content-exam_grades" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Exam Grades</h2>
+  <p>محتوى صفحة Exam Grades هنا.</p>
+</div>
+
+<div id="content-assessment" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Assessment</h2>
+  <p>محتوى صفحة Assessment هنا.</p>
+</div>
+
+<div id="content-percentage" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Percentage(%)</h2>
+  <p>محتوى صفحة Percentage هنا.</p>
+</div>
+
+<div id="content-transcripts" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Academic Transcripts</h2>
+  <p>محتوى صفحة Academic Transcripts هنا.</p>
+</div>
+
+<div id="content-debts" class="content-page" style="display:none;">
+  <button class="back-btn" style="color: aliceblue;">← رجوع</button>
+  <h2>Debts</h2>
+  <p>محتوى صفحة Debts هنا.</p>
+</div>
+
+<div id="content-academic_vacation" class="content-page" style="display:none;">
+  <button class="back-btn">← رجوع</button>
+  <h2>Academic Vacation</h2>
+  <p>محتوى صفحة Academic Vacation هنا.</p>
+</div>
+
+<div id="content-enrollments" class="content-page" style="display:none;">
+  <button class="back-btn">← رجوع</button>
+  <h2>Enrollments</h2>
+  <p>محتوى صفحة Enrollments هنا.</p>
+</div>
+
+<div id="content-restauration" class="content-page" style="display:none;">
+  <button class="back-btn">← رجوع</button>
+  <h2>Restauration</h2>
+  <p>محتوى صفحة Restauration هنا.</p>
+</div>
+
+<div id="content-other_services" class="content-page" style="display:none;">
+  <button class="back-btn">← رجوع</button>
+  <h2>Other Services</h2>
+  <p>محتوى صفحة Other Services هنا.</p>
+</div>
+
+                  
                 
-                  <div class="Caris">
-                    <!-- 20 miniCari -->
-                    <div class="miniCari">
-                      <i class="fa-solid fa-file"></i>
-                      <span>Discharge</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-calendar-days"></i>
-                      <span>Timetable</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-user-group"></i>
-                      <span>Group and Section</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-calendar-days"></i>
-                      <span>Exams Schedule</spanExan g>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                      <span>Exam Grades</span>
-                    </div>
-
-
-
-                    <a href="#" class="miniCari" style="text-decoration: none; color: inherit;">
-                      <i class="fa-solid fa-pen"></i>
-                      <span>Assessment</span>
-                    </a>
-                    
-
-
-
-                    <div class="miniCari">
-                      <i class="fa-solid fa-chart-pie"></i>
-                      <span>Percentage(%)</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-folder-open"></i>
-                      <span>Academic Transcripts </span>
-                    </div>
-                    
-                    <div class="miniCari">
-                      <i class="fa-solid fa-calculator"></i>
-                      <span>Debts</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-file"></i>
-                      <span>Academic Vacation</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-address-book"></i>
-                      <span>Enrollments</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-utensils"></i>
-                      <span>Restauration</span>
-                    </div>
-                    <div class="miniCari">
-                      <i class="fa-solid fa-braille"></i>
-                      <span>Other Services</span>
-                    </div>
-                  </div>
-                
-                </div>
-                
+                      
+                      <!-- <div id="contentArea">
+                        <h2>مرحبا! اختر خدمة من القائمة الجانبية</h2>
+                      </div> -->
 
 
           </div>
 
+
+
+
+
+
+
+
+
+
+          
 
           
           <div id="content2" class="page" style="display: block;">

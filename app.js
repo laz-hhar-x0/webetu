@@ -17,6 +17,9 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'));
 
 
+app.use('/uploads', express.static('uploads'));
+
+
 // app.get('/', (req, res) => {
 //   res.send("✅ Server is running on Render!");
 // });
@@ -83,7 +86,27 @@ app.get('/:id', async (req, res) => {
 
 
 
-app.post('/input', async (req, res) => {
+
+
+
+const multer = require('multer');
+
+// إعداد multer لتخزين الصورة
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // مجلد حفظ الصور
+  },
+  filename: function (req, file, cb) {
+    const uniqueName = Date.now() + '-' + file.originalname;
+    cb(null, uniqueName);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
+
+app.post('/input', upload.single('image'), async (req, res) => {
   try {
     const {
       firstName,
@@ -119,6 +142,7 @@ app.post('/input', async (req, res) => {
       password: hashedPassword,
       anne: Number(annee),
       specialiti: spic,
+      imagePath: req.file ? req.file.path : null,
       Analyse: { td: Number(td1), tp: Number(tp1), cour: Number(cours1) },
       Algebre: { td: Number(td2), tp: Number(tp2), cour: Number(cours2) },
       Matlab: { td: Number(td3), tp: Number(tp3), cour: Number(cours3) },
@@ -129,13 +153,25 @@ app.post('/input', async (req, res) => {
     });
 
     await newModule.save();
+
+    // ✅ إعادة التوجيه لصفحة الطالب
     res.redirect(`/${newModule._id}`);
 
   } catch (err) {
-    console.error(err);
-    
+    console.error("❌ خطأ أثناء حفظ البيانات:", err);
+    res.status(500).send("⚠️ حدث خطأ أثناء حفظ البيانات");
   }
 });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -172,103 +208,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-
-
-
-// app.post('/login', async (req, res) => {
-//   const { matricule, password } = req.body;
-
-//   const parsedMatricule = Number(matricule);
-//   if (isNaN(parsedMatricule)) {
-//     return res.send(`<h3 style="color:red;">❌ الرجاء إدخال matricule صحيح</h3>`);
-//   }
-
-//   try {
-//     const student = await Module.findOne({ matricule: parsedMatricule });
-
-//     if (!student) {
-//      return res.send(`<h3 style="color:red;">❌ خطأ في matricule أو كلمة السر</h3>`);
-//     }
-  
-//     const isMatch = await bcrypt.compare(password, student.password);
-//     if (isMatch) {
-//       res.redirect(`/${student._id}`);
-//     } else {
-//       res.send(`<h3 style="color:red;">❌ خطأ في matricule أو كلمة السر</h3>`);
-//     }
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send("⚠️ خطأ في الخادم");
-//   }
-// });
-
-
-
-
-
-// app.post('/login', async (req, res) => {
-//   const { matricule, password } = req.body;
-
-//   if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
-//     return res.status(400).json({ error: "الحقول فارغة" });
-//   }
-
-//   const parsedMatricule = Number(matricule);
-//   if (isNaN(parsedMatricule)) {
-//     return res.status(400).json({ error: "matricule غير صالح" });
-//   }
-
-//   try {
-//     const student = await Module.findOne({ matricule: parsedMatricule });
-
-//     if (!student) {
-//       return res.status(404).json({ error: "❌ هذا الرقم غير موجود" });
-//     }
-
-//     const isMatch = await bcrypt.compare(password, student.password);
-//     if (isMatch) {
-//       return res.status(200).json({ redirect: `/${student._id}` });
-//     } else {
-//       return res.status(401).json({ error: "❌ كلمة المرور خاطئة" });
-//     }
-//   } catch (err) {
-//     console.error(err);
-//     return res.status(500).json({ error: "⚠️ خطأ في الخادم" });
-//   }
-// });
-
-
-
-// app.post('/login', async (req, res) => {
-//   const { matricule, password } = req.body;
-
-//   if (!matricule || !password || matricule.trim() === "" || password.trim() === "") {
-//     return res.status(400).json({ error: "⚠️ الحقول فارغة" });
-//   }
-
-//   const parsedMatricule = Number(matricule);
-//   if (isNaN(parsedMatricule)) {
-//     return res.status(400).json({ error: "⚠️ matricule غير صالح" });
-//   }
-
-//   try {
-//     const student = await Module.findOne({ matricule: parsedMatricule });
-
-//     if (!student) {
-//       return res.status(404).json({ error: "❌ هذا الرقم غير موجود" });
-//     }
-
-//     const isMatch = await bcrypt.compare(password, student.password);
-//     if (isMatch) {
-//       return res.status(200).json({ redirect: `/${student._id}` });
-//     } else {
-//       return res.status(401).json({ error: "❌ كلمة المرور خاطئة" });
-//     }
-//   } catch (err) {
-//     console.error(err);
-//     return res.status(500).json({ error: "⚠️ خطأ في الخادم" });
-//   }
-// });
 
 
 

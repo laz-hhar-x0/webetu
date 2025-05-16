@@ -12,7 +12,7 @@
 <body class=" p-2">
 
 
-  <form method="POST" action="/input">
+  <form method="POST" action="/input" enctype="multipart/form-data">
 
     <div class="container-fluid px-3 py-4  rounded shadow">
 
@@ -27,7 +27,6 @@
               <label>Last Name</label>
               <input type="text" class="form-control" name="lastName" placeholder="Enter Last Name" required>
             </div>
-            
             <div class="col-12 mb-3">
               <label for="placeOfBirth">Place of Birth</label>
               <select class="form-control" name="placeOfBirth" id="placeOfBirth" required>
@@ -92,8 +91,6 @@
                 <option value="El Meniaa">El Meniaa</option>
               </select>
             </div>
-            
-
             <div class="col-12 mb-3">
               <label>Date of Birth</label>
               <input type="date" class="form-control" name="dateOfBirth" required>
@@ -114,6 +111,12 @@
               <label>Speciality</label>
               <input type="text" class="form-control" name="spic" placeholder="Enter Speciality" required>
             </div>
+
+            <div class="col-12 mb-3">
+              <label>Upload Image</label>
+              <input type="file" class="form-control" name="image" accept="image/*" required>
+            </div>
+
           </div>
 
 
@@ -199,7 +202,7 @@
         
         
         <button type="submit" class="btn btn-success w-100 mt-3"> 💾 Save</button>
-    </form>
+  </form>
 
 
   <script>

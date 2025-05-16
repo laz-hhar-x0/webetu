@@ -16,8 +16,7 @@
     width: 100%;
     z-index: 1000;
     background-color: rgb(39, 38, 38);
-    padding: 3vw;
-    padding-bottom: 20px;
+    padding: 1vw;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   }
   
@@ -41,7 +40,6 @@
 
   }
   
-  /* CONTENT BOX */
   .content {
     width: 95%;
     margin: 0 auto;
@@ -53,7 +51,6 @@
     padding-bottom: 80px;
   }
   
-  /* PAGE INSIDE CONTENT */
   .page {
     display: none;
     text-align: center;
@@ -171,7 +168,7 @@
     height: 8vh;
     background-color: rgb(11, 149, 121);
     border-radius: 10px;
-    padding: 0;
+    padding: 26px 0;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -359,3 +356,70 @@
     cursor: pointer;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .content-page {
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+.back-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* أنيميشن خروج */
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-100%); }
+}
+
+/* أنيميشن دخول */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+/* خروج الصفحة (تنزلق لليسار وتختفي) */
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+/* دخول الصفحة (تنزلق من اليمين وتظهر) */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* تطبيقات الأنيميشن على العناصر */
+.lesCari.animate-out {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+.lesCari.animate-in {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.content-page.animate-out {
+  animation: slideOutRight 0.5s forwards;
+}
+
+.content-page.animate-in {
+  animation: slideInRight 0.5s forwards;
+}
+
+

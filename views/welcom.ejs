@@ -42,40 +42,40 @@
 
     <div class="all  m-auto d-flex flex-column align-items-center justify-content-center min-vh-100">
 
-              <img src="/img/Logo.png" alt="Logo" class="imgg">
+              <img src="/img/Logo2.png" alt="Logo" class="imgg">
               
-          <div class=" text-center my-4 text-secondary">
-              <h5 class="fw-smaler">Progiciel de Gestion Integre </h5> 
-              <h6 class="/"> Student Portal </h6>
-          </div>
+              <div class=" text-center my-4 text-secondary">
+                  <h5 class="fw-smaler">Progiciel de Gestion Integre </h5> 
+                  <h6 class="/"> Student Portal </h6>
+              </div>
 
+              <form action="/login" method="POST" class="d-flex flex-column align-items-center w-90">
 
+                    <div class="user input-group " style="max-width: 400px; width: 100%;">
+                      <span class="input-group-text bg-secondary-subtle"><i class="fas fa-user"></i></span>
+                      <input type="text" name="matricule" class="user form-control bg-secondary-subtle" placeholder="Enter votre matricule">
+                    </div>
+                    <span class="write  w-100 text-start ps-3" style="visibility: hidden;">please enter your matricule!</span>
 
-    <form action="/login" method="POST" class="d-flex flex-column align-items-center w-90">
+                    <div class="user  input-group" style="max-width: 400px; width: 100%;">
+                      <span class="input-group-text bg-secondary-subtle"><i class="fas fa-key"></i></span>
+                      <input type="password" name="password" class="form-control bg-secondary-subtle" placeholder="Enter votre mot de passe">
+                    </div>
 
-          <div class="user input-group " style="max-width: 400px; width: 100%;">
-            <span class="input-group-text bg-secondary-subtle"><i class="fas fa-user"></i></span>
-            <input type="text" name="matricule" class="user form-control bg-secondary-subtle" placeholder="Enter votre matricule">
-          </div>
-          <span class="write  w-100 text-start ps-3" style="visibility: hidden;">please enter your matricule!</span>
+                    <span class="writee w-100 text-start ps-3" style="visibility:hidden;">please enter your Password!</span>
 
-          <div class="user  input-group" style="max-width: 400px; width: 100%;">
-            <span class="input-group-text bg-secondary-subtle"><i class="fas fa-key"></i></span>
-            <input type="password" name="password" class="form-control bg-secondary-subtle" placeholder="Enter votre mot de passe">
-          </div>
+                    <div id="login-error" class="text-danger mt-1"></div>
 
-          <span class="writee w-100 text-start ps-3" style="visibility:hidden;">please enter your Password!</span>
+                  <!-- Login button -->
+                  <!-- <div class="Login d-grid mt-3 mb-4" style="max-width: 400px; width: 100%;"> -->
+                    <button type="submit" class="btnn">Login</button>
+                  <!-- </div> -->
+              
+              </form>
 
-          <div id="login-error" class="text-danger mt-1"></div>
-
-        <!-- Login button -->
-        <!-- <div class="Login d-grid mt-3 mb-4" style="max-width: 400px; width: 100%;"> -->
-          <button type="submit" class="btnn">Login</button>
-        <!-- </div> -->
-    
-    </form>
-
-    <h6 class="last text-center ">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
+              <h6 class="last text-center ">Ministry of Higher Educion and scientific Research <br>  © 2024</h6>
+            
+  
     </div>
 
 

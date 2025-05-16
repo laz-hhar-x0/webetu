@@ -35,6 +35,7 @@ const moduleSchema = new mongoose.Schema({
   matricule: Number,
   anne: Number,
   specialiti: String,
+  imagePath: String, 
   password: String, 
   Analyse: noteSchema,
   Algebre: noteSchema,
